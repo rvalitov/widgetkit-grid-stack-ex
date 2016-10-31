@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="icon-grid-stack" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-<rect x="22" y="6" fill="#575656" width="13" height="2"/>
-<rect x="22" y="10" fill="#575656" width="16" height="2"/>
-<rect x="22" y="14" fill="#575656" width="13" height="2"/>
-<rect x="1" y="25" fill="#575656" width="13" height="2"/>
-<rect x="1" y="29" fill="#575656" width="16" height="2"/>
-<rect x="1" y="33" fill="#575656" width="13" height="2"/>
-<path fill="#575656" d="M1,3v16h18V3H1z M17,17H3V5h14V17z"/>
-<path fill="#575656" d="M21,23v14h18V23H21z M37,35H23V25h14V35z"/>
+	 y="0px" viewBox="-129 131 40 40" enable-background="new -129 131 40 40" xml:space="preserve">
+<rect x="-107" y="137" fill="#FFB105" width="13" height="2"/>
+<rect x="-107" y="141" fill="#FFB105" width="16" height="2"/>
+<rect x="-107" y="145" fill="#FFB105" width="13" height="2"/>
+<rect x="-128" y="156" fill="#FFB105" width="13" height="2"/>
+<rect x="-128" y="160" fill="#FFB105" width="16" height="2"/>
+<rect x="-128" y="164" fill="#FFB105" width="13" height="2"/>
+<path fill="#FF9303" d="M-128,134v16h18v-16H-128z M-112,148h-14v-12h14V148z"/>
+<path fill="#FF9303" d="M-108,154v14h18v-14H-108z M-92,166h-14v-10h14V166z"/>
 </svg>
