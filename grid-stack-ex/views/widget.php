@@ -480,7 +480,7 @@ $groupcode=uniqid('wk-grid-stack-ex');
 
     </div>
 
-    <?php if ($i+1 != count($items)) echo $divider; ?>
+    <?php if ($index+1 != count($items)) echo $divider; ?>
 
 <?php endforeach; ?>
 
