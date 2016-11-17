@@ -125,7 +125,7 @@ switch ($settings['lightbox_style']) {
         $button_lightbox = 'uk-button uk-button-large uk-button-primary';
         break;
     case 'button-link':
-        $link_style = 'uk-button uk-button-link';
+        $button_lightbox = 'uk-button uk-button-link';
         break;
     default:
         $button_lightbox = '';
@@ -186,6 +186,28 @@ switch ($settings['badge_style']) {
         $badge_style .= ($settings['badge_position'] == 'panel') ? ' uk-panel-badge' : '';
         break;
 }
+
+// Button
+switch ($settings['link_style']) {
+	case 'icon':
+	case 'icon-small':
+	case 'icon-medium':
+	case 'icon-large':
+	case 'icon-button':
+		$link_style .= ' uk-icon-muted';
+		break;
+}
+switch ($settings['lightbox_style']) {
+	case 'icon':
+	case 'icon-small':
+	case 'icon-medium':
+	case 'icon-large':
+	case 'icon-button':
+		$button_lightbox .= ' uk-icon-muted';
+		break;
+}
+$link_style = ($link_style) ? 'class="' . $link_style . '"' : '';
+$button_lightbox = ($button_lightbox) ? 'class="' . $button_lightbox . '"' : '';
 
 // Media Border
 $border = ($settings['media_border'] != 'none') ? 'uk-border-' . $settings['media_border'] : '';
@@ -303,27 +325,6 @@ $groupcode=uniqid('wk-grid-stack-ex');
         }
         $lightbox_caption = $lightbox_caption ? 'title="' . htmlspecialchars(strip_tags($lightbox_caption)) .'"' : '';
 
-		// Button
-		switch ($settings['link_style']) {
-			case 'icon':
-			case 'icon-small':
-			case 'icon-medium':
-			case 'icon-large':
-			case 'icon-button':
-				$link_style .= ' uk-icon-muted';
-				break;
-		}
-		switch ($settings['lightbox_style']) {
-			case 'icon':
-			case 'icon-small':
-			case 'icon-medium':
-			case 'icon-large':
-			case 'icon-button':
-				$button_lightbox .= ' uk-icon-muted';
-				break;
-		}
-		$link_style = ($link_style) ? 'class="' . $link_style . '"' : '';
-		$button_lightbox = ($button_lightbox) ? 'class="' . $button_lightbox . '"' : '';
 		$buttons = array();
 		if ($item['link'] && $settings['link']) {
 			$buttons['link'] = '<a ' . $link_style . ' href="' . $item->escape('link') . '"' . $link_target . '>' . $app['translator']->trans($settings['link_text']) . '</a>';}
