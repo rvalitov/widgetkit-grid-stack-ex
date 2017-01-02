@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/Release-v1.0.0-green.svg?style=flat) ![Widgetkit](https://img.shields.io/badge/Widgetkit-v2.4.x+-green.svg?style=flat) ![Joomla](https://img.shields.io/badge/Joomla!-v3.4.x+-yellow.svg?style=flat) ![Wordpress](https://img.shields.io/badge/Wordpress-v4.4.x+-yellow.svg?style=flat) ![PHP7](https://img.shields.io/badge/PHP7-compatible-blue.svg?style=flat)
+![Version](https://img.shields.io/badge/Release-v1.1.0-green.svg?style=flat) ![Widgetkit](https://img.shields.io/badge/Widgetkit-v2.4.x+-green.svg?style=flat) ![Joomla](https://img.shields.io/badge/Joomla!-v3.4.x+-yellow.svg?style=flat) ![Wordpress](https://img.shields.io/badge/Wordpress-v4.4.x+-yellow.svg?style=flat) ![PHP7](https://img.shields.io/badge/PHP7-compatible-blue.svg?style=flat)
 
 ![Grid Stack Ex widget logo](https://raw.githubusercontent.com/wiki/rvalitov/widgetkit-grid-stack-ex/images/grid-stack-ex-logo.jpg)
 
@@ -15,6 +15,7 @@
 The new features that the Grid Stack Ex has and that are not available in the original Grid Stack widget:
  
 * **Lightbox mode** - a new set of options added that provide support for Lightbox, [read more](https://github.com/rvalitov/widgetkit-grid-stack-ex/wiki/Lightbox-mode).
+* **Update notifications** - you will be notified if new versions of the widget are available.
 
 # Supported platforms
 * The initial code is based on Widgetkit 2.8.0, and was updated if necessary. However it should work with any Widgetkit 2.4.x and later (recommended 2.5.0+). Tested on Widgetkit 2.8.x and 2.9.x, too.
@@ -32,7 +33,8 @@ Some issues about using the widget are available in the [Wiki area](https://gith
 # Authors, Contributors and Acknowledgment
 * This widget is created by [Ramil Valitov](http://www.valitov.me).
 * The code is based on the original [Grid Stack widget](https://demo.yootheme.com/widgetkit/joomla/index.php/home/grid-stack) by [Yootheme](http://yootheme.com/).
-* Special thanks to Josh Gilson for financial support for development of the first release of this project. Purely thanks to his help this widget was created. 
+* Special thanks to Josh Gilson for financial support for development of the first release of this project. Purely thanks to his help this widget was created.
+* Thanks to Yanni Michail @yannismic for sharing his motivation and ideas with me.
 
 ## Disclaimer
 This project is NOT affiliated with, endorsed, or sponsored by the Yootheme. Widgetkit, its name, trademark, and other aspects of the app are trademarked and owned by their respective owners.
