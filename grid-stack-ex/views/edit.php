@@ -6,8 +6,10 @@ E-mail: ramilvalitov@gmail.com
 Web: http://www.valitov.me/
 Git: https://github.com/rvalitov/widgetkit-grid-stack-ex
 */
-?>
 
+use WidgetkitEx\GridStackEx\WidgetkitExPlugin;
+$plugin=new WidgetkitExPlugin($app);
+?>
 <div class="uk-grid uk-grid-divider uk-form uk-form-horizontal" data-uk-grid-margin>
     <div class="uk-width-medium-1-4">
 
@@ -18,6 +20,7 @@ Git: https://github.com/rvalitov/widgetkit-grid-stack-ex
                 <li><a href="">{{'Content' | trans}}</a></li>
 				<li><a href="">{{'Lightbox' | trans}}</a></li>
                 <li><a href="">{{'General' | trans}}</a></li>
+				<li><a href="#">{{'About' | trans}}</a></li>
             </ul>
         </div>
 
@@ -502,6 +505,20 @@ Git: https://github.com/rvalitov/widgetkit-grid-stack-ex
                         <input id="wk-class" class="uk-form-width-medium" type="text" ng-model="widget.data['class']">
                     </div>
                 </div>
+
+            </li>
+			<li>
+
+                <h3 class="wk-form-heading">{{'About' | trans}}</h3>
+
+				<?php $plugin->printAboutInfo($app);?>
+
+				<h3 class="wk-form-heading">{{'Newsletter' | trans}}</h3>
+	
+				<?php $plugin->printNewsletterInfo($app);?>
+				
+				<h3 class="wk-form-heading">{{'Donation' | trans}}</h3>
+				<?php $plugin->printDonationInfo($app);?>
 
             </li>
         </ul>
