@@ -1,4 +1,4 @@
-![Version](https://img.shields.io/badge/Release-v1.1.0-green.svg?style=flat) ![Widgetkit](https://img.shields.io/badge/Widgetkit-v2.4.x+-green.svg?style=flat) ![Joomla](https://img.shields.io/badge/Joomla!-v3.4.x+-yellow.svg?style=flat) ![Wordpress](https://img.shields.io/badge/Wordpress-v4.4.x+-yellow.svg?style=flat) ![PHP7](https://img.shields.io/badge/PHP7-compatible-blue.svg?style=flat)
+![Version](https://img.shields.io/badge/Release-v1.1.1-green.svg?style=flat) ![Widgetkit](https://img.shields.io/badge/Widgetkit-v2.4.x+-green.svg?style=flat) ![Joomla](https://img.shields.io/badge/Joomla!-v3.4.x+-yellow.svg?style=flat) ![Wordpress](https://img.shields.io/badge/Wordpress-v4.4.x+-yellow.svg?style=flat) ![PHP7](https://img.shields.io/badge/PHP7-compatible-blue.svg?style=flat) ![YoothemePro](https://img.shields.io/badge/YoothemePro-compatible-blue.svg?style=flat)
 
 ![Grid Stack Ex widget logo](https://raw.githubusercontent.com/wiki/rvalitov/widgetkit-grid-stack-ex/images/grid-stack-ex-logo.jpg)
 
@@ -10,6 +10,7 @@
 
 * **Backward compatibility** - all other behavior, styling and features of the original [Grid Stack widget](https://demo.yootheme.com/widgetkit/joomla/index.php/home/grid-stack) are preserved.
 * **Use with your existing data** - you can easily convert your existing Grid Stack widgets into Grid Stack Ex preserving all the data and options.
+* **Compatible with Yootheme Pro** - you can use this widget with [Yootheme Pro](https://yootheme.com/pro/). 
 
 ### Unique Features
 The new features that the Grid Stack Ex has and that are not available in the original Grid Stack widget:
