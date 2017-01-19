@@ -164,6 +164,9 @@ class WidgetkitExPlugin{
 	
 	private $CMS;
 	
+	//true or false if installation path is correct
+	private $pathCorrect = false;
+	
 	//Use {wk} or uk prefix for CSS classes. Old Widgetkit uses uk prefix for UIkit, latest Widgetkits use {wk}
 	private $useWKPrefix;
 	
@@ -201,20 +204,20 @@ class WidgetkitExPlugin{
 		array_push($this->debug_info,'Host: '.@php_uname());
 		$ipath=$this->plugin_info['path'];
 		array_push($this->debug_info,'Widget installation path: '.$ipath);
-		$pathCorrect=false;
+		$this->pathCorrect=false;
 		if ($this->isJoomla)
-			if (preg_match_all('@.*\/administrator\/components\/com_widgetkit\/plugins\/widgets\/.+@',$ipath))
+			if (preg_match_all('@.*\/administrator\/components\/com_widgetkit\/plugins\/'.($this->isWidget ? 'widgets' : 'content').'\/.+@',$ipath))
 			{
 				array_push($this->debug_info,'Installation path is correct');
-				$pathCorrect=true;
+				$this->pathCorrect=true;
 			}
 			else
 				array_push($this->debug_error,'Installation path is not correct, please fix it. Read more in the Wiki.');
 		else
-			if (preg_match_all('@.*\/wp-content\/plugins\/widgetkit\/plugins\/widgets\/.+@',$ipath))
+			if (preg_match_all('@.*\/wp-content\/plugins\/widgetkit\/plugins\/'.($this->isWidget ? 'widgets' : 'content').'\/.+@',$ipath))
 			{
 				array_push($this->debug_info,'Installation path is correct');
-				$pathCorrect=true;
+				$this->pathCorrect=true;
 			}
 			else
 				array_push($this->debug_warning,'Installation path is not correct, please fix it. Read more in the Wiki.');
@@ -226,7 +229,7 @@ class WidgetkitExPlugin{
 		
 		$this->useWKPrefix=false;
 		$this->UIkitVersion=null;
-		if ($pathCorrect){
+		if ($this->pathCorrect){
 			$wkuikit = $ipath.'/../../../vendor/assets/wkuikit';
 			if ( (file_exists($wkuikit)) && (is_dir($wkuikit)) ){
 				$this->useWKPrefix=true;
@@ -455,12 +458,9 @@ class WidgetkitExPlugin{
 		
 		$needle=$widgetkit_dir_name.DIRECTORY_SEPARATOR."plugins".DIRECTORY_SEPARATOR."widgets".DIRECTORY_SEPARATOR;
 		$pos=strrpos(__DIR__,$needle);
-		$this->isWidget=(boolean)$pos;
 		if (!$pos){
-			$this->isWidget=false;
 			$needle=$widgetkit_dir_name.DIRECTORY_SEPARATOR."plugins".DIRECTORY_SEPARATOR."content".DIRECTORY_SEPARATOR;
 			$pos=strrpos(__DIR__,$needle);
-			$this->isContentProvider=(boolean)$pos;
 		}
 		if ($pos){
 			$info['root']=substr(__DIR__,0,$pos);
@@ -503,6 +503,11 @@ class WidgetkitExPlugin{
 				}
 				if (preg_match_all("@^\s*'plugin_website'\s*=>\s*'.*$@m",$f,$matches)){
 					$info['website']=explode("'",trim($matches[0][0]))[3];
+				}
+				if (preg_match_all("@^\s*'name'\s*=>\s*'.*$@m",$f,$matches)){
+					$raw_name=explode("'",trim($matches[0][0]))[3];
+					$this->isWidget = (substr( $raw_name, 0, 7 ) === "widget/");
+					$this->isContentProvider = (substr( $raw_name, 0, 8 ) === "content/");
 				}
 			}
 			$url=$appWK['url']->to('widgetkit');
@@ -557,12 +562,7 @@ class WidgetkitExPlugin{
 		
 		$files=json_encode($item->toArray());
 		
-		$installpath=true;
-		if ($this->isJoomla)
-			$installpath=preg_match_all('@.*\/administrator\/components\/com_widgetkit\/plugins\/widgets\/.+@',$this->plugin_info['path']);
-		else
-			$installpath=preg_match_all('@.*\/wp-content\/plugins\/widgetkit\/plugins\/widgets\/.+@',$this->plugin_info['path']);
-		if ($installpath)
+		if ($this->pathCorrect)
 			$installpath='<span class="uk-text-success" style="word-break:break-all"><i class="uk-icon uk-icon-check uk-margin-small-right"></i>'.$this->plugin_info['path'].'</span>';
 		else
 			$installpath='<span class="uk-text-danger" style="word-break:break-all"><i class="uk-icon uk-icon-warning uk-margin-small-right"></i>'.$this->plugin_info['path'].'</span>';
@@ -904,7 +904,7 @@ EOT;
 	<div>
 		<div class="uk-panel uk-panel-box uk-text-center uk-margin-bottom">
 			<p class="uk-panel-title">{{ 'Euro' |trans}} <i class="uk-icon uk-icon-euro"></i></p>
-			<p>Payment methods:</p>
+			<p>{{ 'Payment methods:' |trans}}</p>
 			<ul style="list-style-type: none;">
 				<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BJJF3E6DBRYHA" target="_blank"><i class="uk-icon uk-icon-credit-card"></i> {{ 'Bank card' |trans}}</a></li>
 				<li><a href="https://www.paypal.me/valitov/0eur" target="_blank"><i class="uk-icon uk-icon-paypal"></i> {{ 'PayPal' |trans}}</a></li>
@@ -914,7 +914,7 @@ EOT;
 	<div>
 		<div class="uk-panel uk-panel-box uk-text-center uk-margin-bottom">
 			<p class="uk-panel-title">{{ 'USD' |trans}} <i class="uk-icon uk-icon-usd"></i></p>
-			<p>Payment methods:</p>
+			<p>{{ 'Payment methods:' |trans}}</p>
 			<ul style="list-style-type: none;">
 				<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B8VMNU7SEAU8J" target="_blank"><i class="uk-icon uk-icon-credit-card"></i> {{ 'Bank card' |trans}}</a></li>
 				<li><a href="https://www.paypal.me/valitov/0usd" target="_blank"><i class="uk-icon uk-icon-paypal"></i> {{ 'PayPal' |trans}}</a></li>
