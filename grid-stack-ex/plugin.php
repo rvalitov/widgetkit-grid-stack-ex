@@ -16,9 +16,9 @@ return array(
 
     'main' => 'YOOtheme\\Widgetkit\\Widget\\Widget',
 	
-	'plugin_version' => 'v1.1.2',
+	'plugin_version' => 'v1.1.3',
 	
-	'plugin_date' => '14/03/2017',
+	'plugin_date' => '09/09/2017',
 	
 	'plugin_logo' => 'https://raw.githubusercontent.com/wiki/rvalitov/widgetkit-grid-stack-ex/images/grid-stack-ex-logo.jpg',
 	
